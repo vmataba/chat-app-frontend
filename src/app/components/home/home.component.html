@@ -1,0 +1,13 @@
+<div class="home">
+    <div class="topbar">
+        <app-topbar></app-topbar>
+    </div>
+    <div class="main-content">
+            <div [class.hide]="!(showFriendsPanel$ | async)" class="friends">
+                <app-friends></app-friends>
+            </div>
+        <div class="chat-room">
+            <app-chat-room></app-chat-room>
+        </div>
+    </div>
+</div>

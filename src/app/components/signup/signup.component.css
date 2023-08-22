@@ -1,0 +1,20 @@
+.submit-button{
+    margin-top: 10px;
+    text-align: left;
+}
+
+.signup-form{
+    padding: 20px;
+    /* box-shadow: 2px 2px 20px black; */
+    width: 50%;
+    margin: auto;
+}
+
+.title{
+    text-align: center;
+}
+
+.logo{
+    text-shadow: 2px 2px 2px #ccc;
+    user-select: none;
+}

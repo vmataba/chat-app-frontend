@@ -1,0 +1,42 @@
+<div class="chat-room" *ngIf="chatWith$ | async as chatWith else selectFriend">
+    
+    <div class="chat-with">
+       <button class="btn-toggle-friends" (click)="toggleFriendsPanel()">
+        <i class="bi bi-list"></i>
+       </button>
+        {{chatWith.first_name}} {{chatWith.last_name}}
+    </div>
+
+   <div class="messages">
+    <div *ngIf="hasMessages$ | async else noMessages ">
+
+        <ng-container *ngFor="let message of messages$ | async">
+            <div class="message-container">
+                <div class="message" [class.sent]="message.to.id == chatWith.id" [class.received]="message.to.id != chatWith.id">
+                    <app-message 
+                    [message]="message"
+                    [sent]="message.to.id == chatWith.id"
+                    [received]="message.to.id != chatWith.id">
+                </app-message>
+                </div>
+            </div>
+        </ng-container>
+    
+    </div>
+   </div>
+
+    <div class="chat-box">
+        <app-chat-box [user]="user$ | async" [friend]="chatWith$ | async"></app-chat-box>
+    </div>
+
+</div>
+
+
+
+<ng-template #selectFriend>
+    <p class="select-friend-prompt">Select a friend to start chat</p>
+</ng-template>
+
+<ng-template #noMessages>
+    <p class="no-messages"> No messages were found</p>
+</ng-template>

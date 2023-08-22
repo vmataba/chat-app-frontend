@@ -1,0 +1,100 @@
+.friend {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    flex-direction: row;
+    user-select: none;
+}
+
+.profile-image {
+    height: fit-content;
+    border: 1px solid var(--bs-gray);
+    aspect-ratio: 1;
+    width: 50px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.default-icon{
+    color: var(--bs-gray);
+    font-size: 1.8rem;
+    text-shadow: 1px 1px var(--bs-gray);
+}
+.profile-image img{
+    aspect-ratio: 1;
+    width: 75%;
+}
+
+.content {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    width: calc(100% - 50px);
+    left: 50px;
+    align-items: center;
+    height: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+
+}
+
+.name{
+    white-space: nowrap;
+}
+
+.actions {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top:15px;
+    margin-bottom: auto;
+}
+
+.actions a {
+    cursor: pointer;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 10px;
+}
+.online{
+    font-size: smaller;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    position: relative;
+
+}
+
+.online i{
+    font-size: 2rem;
+    position: absolute;
+    left: 0;
+    margin-left: -10px;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    color: var(--bs-green);
+    font-weight: bold;
+}
+
+.online small{
+    position: absolute;
+    margin-left: 5px;
+    margin-top: 10px;
+    color: var(--bs-green);
+    font-weight: bold;
+}
+
+.pending{
+    text-align: center;
+}
+.pending a{
+    margin-top: 10px;
+}

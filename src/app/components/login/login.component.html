@@ -1,0 +1,32 @@
+<div class="login-form shadow">
+    <h5 class="text-center">Login to Your Account</h5>
+    <form [formGroup]="form" (submit)="login()">
+        <div class="form-group">
+            <label>Username</label>
+            <input formControlName="username" type="text" class="form-control" placeholder="Enter your username ...." [class.is-invalid]="username?.touched && username?.hasError('required')">
+            <small *ngIf="username?.touched && username?.hasError('required')" class="text-danger">Username is required</small>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input formControlName="password" type="password" class="form-control" placeholder="Enter your password ...." [class.is-invalid]="password?.touched && password?.hasError('required')">
+            <small *ngIf="password?.touched && password?.hasError('required')" class="text-danger">Password is required</small>
+        </div>
+        <div class="feedback">
+            <div *ngIf="authenticating$ | async" class="text-muted">
+                Please wait while you are being authenticated ...
+            </div>
+            <div *ngIf="authenticationError$ | async as authenticationError" class="text-danger">
+                 <span class="text-bold text-danger">{{authenticationError.statusCode}}</span> | {{authenticationError.message}}   
+            </div>
+        </div>
+        <div class="form-group login-button">
+            <button class="btn btn-primary" [class.disabled]="form.invalid || (authenticating$ | async)">
+                Login    
+            </button>
+            <span>
+                Don't have an account? <a routerLink="/signup">Signup</a>
+            </span>
+        </div>
+       
+    </form>
+</div>

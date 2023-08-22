@@ -1,0 +1,42 @@
+.home {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #ddd;
+}
+
+.topbar {
+    width: 100%;
+    z-index: 2;
+}
+
+.main-content {
+    /* position: absolute; */
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    z-index: 1;
+    left: 0;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.chat-room {
+    /* margin-left: calc(10px + 5%); */
+    /* background-color: aliceblue; */
+    width: 100%;
+    padding-top: 65px;
+}
+
+.friends{
+    transition: .3s ease;
+    width: 350px;
+}
+
+.hide{
+    width: 0;
+    opacity: 0;
+}

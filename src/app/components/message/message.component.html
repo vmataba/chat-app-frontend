@@ -1,0 +1,7 @@
+<div class="message" [class.sent]="sent" [class.received]="received">
+    {{message?.content}}
+    <span class="date">
+        <i class="bi bi-clock-history"></i>
+        {{message?.sent_time}}
+    </span>
+</div>

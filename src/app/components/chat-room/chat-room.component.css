@@ -1,0 +1,88 @@
+.chat-room{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-right: 5px;
+}
+
+.messages{
+    height: 70vh;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+.message-container{
+    margin-top: 10px;
+    width: 100%;
+}
+
+.message{
+    padding: 5px;
+    margin: 2px;
+    border-radius: 10px;
+    clear: both;
+}
+
+.sent{
+   float: right;
+}
+.received{
+    float: left;
+}
+.chat-with{
+    /* background-color: #fff; */
+    background-color: #F1F0F0;
+    height: 50px;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    padding-left: 10px;
+}
+.chat-with i {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.select-friend-prompt{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #ccc;
+    text-shadow: 1px 1px 1px #ccc;
+    user-select: none;
+}
+
+.no-messages{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    margin-top: 100px;
+    color: #ccc;
+}
+
+.chat-box{
+    width: 90%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+::-webkit-scrollbar {
+    background-color: white;
+    width: 5px;
+    margin-right: 0;
+  }
+
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 20px;
+  }
+
+  .btn-toggle-friends{
+    border: none;
+    cursor: pointer;
+  }

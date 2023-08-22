@@ -1,0 +1,70 @@
+.topbar{
+    height: 65px;
+    background-color: #BDBDBD;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    flex-grow: 9;
+}
+
+.user-info{
+    flex-grow: 1;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    cursor: pointer;
+    justify-content: center;
+}
+.profile-image{
+    position: absolute;
+    right: 0;
+    margin-right: 50px;
+    font-size: 2.5rem;
+    background-color: #fff;
+    aspect-ratio: 1;
+    width: 50px;
+    text-align: center;
+    border-radius: 100%;
+    padding: 0;
+    text-shadow: 2px 2px 2px #BDBDBD;
+    border-color: #BDBDBD;
+    user-select: none;
+}
+
+.actions{
+    position: absolute;
+    margin-top: 150px;
+    background-color: #fff;
+    width: 160px;
+    padding: 12px;
+    box-shadow: 2px 2px 2px #BDBDBD;
+    transition: .5s ease;
+    height: 0;
+    opacity: 0;
+}
+
+.actions ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
+}
+.actions ul li:not(:first-child){
+    margin-top: 10px;
+}
+.actions ul li:not(:last-child){
+    border-bottom: 1px solid #BDBDBD;
+    padding-bottom: 10px;
+}
+
+.show{
+    height: 90px;
+    opacity: 1;
+}
+

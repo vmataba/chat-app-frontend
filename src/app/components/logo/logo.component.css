@@ -1,0 +1,7 @@
+.logo{
+   text-shadow: 2px 2px 2px #ddd;
+   margin: 0;
+   padding: 10px;
+   font-size: 3rem;
+   user-select: none;
+}

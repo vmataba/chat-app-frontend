@@ -1,0 +1,23 @@
+<form [formGroup]="form">
+    <div class="form-group">
+        <label>Email</label>
+        <input formControlName="email" type="text" class="form-control" placeholder="Enter your email ...">
+    </div>
+    <div class="form-group">
+        <label>First Name</label>
+        <input formControlName="first_name" type="text" class="form-control" placeholder="Enter your first name ...">
+    </div>
+    <div class="form-group">
+        <label>Middle Name</label>
+        <input formControlName="middle_name" type="text" class="form-control" placeholder="Enter your middle name">
+    </div>
+    <div class="form-group">
+        <label>Last Name</label>
+        <input formControlName="last_name" type="text" class="form-control" placeholder="Enter your last name">
+    </div>
+    <div class="form-group">
+        <input formControlName="online" type="checkbox" class="form-check-input">
+        &nbsp;
+        <label [class.text-success]="form.value.online" [class.text-grey]="!form.value.online">{{ form.value.online?'Online':'Offline'}}</label>
+    </div>
+</form>

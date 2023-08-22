@@ -1,0 +1,41 @@
+<div *ngIf="user$ | async as user" class="friends">
+    <div class="search-box">
+        <app-search-box placeholder="Search for a friend ..." (search)="search($event)"></app-search-box>
+    </div>
+    <h5>Your Friends</h5>
+    <div class="available">
+        <div *ngIf="loadingFriends$ | async">Fetching friends</div>
+        <div *ngIf="loadFriendsError$ | async as error">{{ error.statusCode }} | {{ error.message}}</div>
+        <div *ngIf="hasFriends$ | async else noFriends">
+            <div *ngFor="let friend of friends$ | async | filter:keyword" class="friend">
+                <app-friend [friend]="friend" [suggested]="false"></app-friend> 
+            </div>
+        </div>
+    </div>
+    <h5>Friend Requests</h5>
+    <div class="requests">
+        <div *ngIf="loadingFriendRequests$ | async">Fetching friend requests</div>
+        <div *ngIf="loadFriendsError$ | async as error">{{ error.statusCode }} | {{ error.message}}</div>
+        <div *ngIf="hasFriendRequests$ | async else noFriends">
+            <div *ngFor="let friend of friendRequests$ | async | filter:keyword" class="friend">
+                <app-friend [friend]="friend" [suggested]="false" [incomingRequest]="friend.id == user.id" [outGoingRequest]="friend.id != user.id">
+
+                </app-friend> 
+            </div>
+        </div>
+    </div>
+  
+    <div class="suggested">
+        <h5>Suggested for you</h5>
+        <div *ngIf="loadingSuggestedFriends$ | async">Fetching suggested friends</div>
+        <div *ngIf="suggestedFriendsError$ | async as error">{{ error.statusCode }} | {{ error.message}}</div>
+        <div *ngIf="hasSuggestedFriends$ | async as suggestedFriends else noFriends">
+            <div *ngFor="let suggestedFriend of suggestedFriends$ | async | filter:keyword" class="friend">
+                <app-friend [friend]="suggestedFriend" [suggested]="true"></app-friend> 
+            </div>
+        </div>
+    </div>
+    <ng-template #noFriends>
+        <p class="no-friends text-center text-muted">No friends were not found</p>
+    </ng-template>
+</div>

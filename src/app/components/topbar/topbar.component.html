@@ -1,0 +1,30 @@
+<div class="topbar">
+  <div class="logo">
+   <app-logo></app-logo>
+  </div>
+   <div class="user-info" (click)="showOptions = !showOptions">
+      <div class="profile-image">
+         V
+      </div>
+      <div class="actions" [class.show]="showOptions">
+         <ul>
+            <li (click)="showProfileDetails()">
+               <i class="bi bi-person"></i>
+               My Details
+            </li>
+            <li (click)="logout()">
+               <i class="bi bi-arrow-left-short"></i>
+               Logout
+            </li>
+         </ul>
+      </div>
+   </div>
+</div>
+
+<ng-container *ngIf="showUserInfo">
+   <div *ngIf="user$ | async as user">
+      <app-modal [title]="user.first_name+' '+user.last_name" [show]="showUserInfo" (close)="showUserInfo = !showUserInfo" size="md">
+        <app-user-profile-form [user]="user"></app-user-profile-form>
+      </app-modal>
+   </div>
+</ng-container>

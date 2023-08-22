@@ -1,0 +1,6 @@
+.modal,
+.modal-dialog,
+.modal-content{
+    border-radius: 0;
+    border-color: #fff;
+}

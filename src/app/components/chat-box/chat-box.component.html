@@ -1,0 +1,8 @@
+<div class="chat-box">
+    <form [formGroup]="form" (submit)="sendMessage()">
+        <input formControlName="content" placeholder="Type your message ...."/>
+        <button class="btn btn-send" [disabled]="form.invalid">
+            <i class="bi bi-send"></i>
+        </button>
+    </form>
+</div>

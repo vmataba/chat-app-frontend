@@ -1,0 +1,67 @@
+<div class="signup-form shadow">
+    <h1 class="logo">Chat App</h1>
+    <h3 class="title text-muted">Create an account to proceed</h3>
+    <form [formGroup]="form" (submit)="submit()">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input formControlName="first_name" type="text" class="form-control" [class.is-invalid]="first_name?.touched && first_name?.hasError('required')">
+                        <small *ngIf="first_name?.touched && first_name?.hasError('required')" class="text-danger">First Name is required</small>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Middle Name</label>
+                        <input formControlName="middle_name" type="text" class="form-control">
+            
+                    </div>
+                </div>
+            </div>
+
+          
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input formControlName="last_name" type="text" class="form-control" [class.is-invalid]="last_name?.touched && last_name?.hasError('required')">
+                        <small *ngIf="last_name?.touched && last_name?.hasError('required')" class="text-danger">Last Name is required</small>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input formControlName="email" type="text" class="form-control" [class.is-invalid]="email?.touched && (email?.hasError('required') || email?.hasError('invalid'))">
+                        <small *ngIf="email?.touched && email?.hasError('required')" class="text-danger">Email is required</small>
+                        <small *ngIf="email?.touched && email?.hasError('email')" class="text-danger">Email is not valid</small>
+                    </div>
+                </div>
+            </div>    
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input formControlName="password" type="password" class="form-control" [class.is-invalid]="password?.touched && password?.hasError('required')">
+                        <small *ngIf="password?.touched && password?.hasError('required')" class="text-danger">Password is required</small>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Repeat Password</label>
+                        <input formControlName="confirmation_password" type="password" class="form-control" [class.is-invalid]="confirmation_password?.touched && confirmation_password?.hasError('required')">
+                        <small *ngIf="confirmation_password?.touched && confirmation_password?.hasError('required')" class="text-danger">Password is required</small>
+                    </div>
+                </div>
+            </div> 
+            
+            <div class="form-group submit-button">
+                <button type="submit" class="btn btn-primary" [class.disabled]="form.invalid">
+                    Signup
+                </button>
+                <span>
+                    Have an account? <a routerLink="/login">Login</a>
+                </span>
+            </div>
+    </form>
+</div>

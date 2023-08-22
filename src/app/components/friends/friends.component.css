@@ -1,0 +1,44 @@
+.friends{
+    display: flex;
+    flex-direction: column;
+    /* width: 300px; */
+    width: 100%;
+    background-color: #fff;
+    height: 100vh;
+    padding-top: 70px;
+    overflow-y: scroll;
+}
+.search-box{
+   padding: 5px;
+}
+.suggested{
+    margin-top: 25px;
+}
+
+.friends h5,
+.requests h5{
+    padding-left: 5px;
+    color: grey;
+}
+
+.friend{
+    margin-top: 10px;
+    width: 90%;
+    margin-left: 15px;
+}
+
+.no-friends{
+    font-size: small;
+    padding: 25px;
+}
+
+::-webkit-scrollbar {
+    background-color: white;
+    width: 5px;
+    margin-right: 0;
+  }
+
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 20px;
+  }

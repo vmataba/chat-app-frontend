@@ -1,0 +1,42 @@
+<div class="friend">
+    <div class="profile-image">
+        <!-- <i class="default-icon bi bi-person"></i> -->
+        <span class="default-icon">{{getFirstLetter()}}</span>
+        <!-- <img src="assets/images/default-profile-image.png" alt="" srcset=""> -->
+    </div>
+
+    <div class="content">
+      <div class="info">
+        <span class="name">{{ getFullName() }}</span>
+        <p *ngIf="friend?.friends_with && friend?.accepted && friend?.online" class="online">
+            <i class="bi bi-dot"></i>
+            <small>Online</small>
+        </p>
+    </div>
+        <ul class="actions">
+            <a *ngIf="friend?.friends_with && friend?.accepted" class="icon-action icon-chat" (click)="selectFrind()">
+                <i class="bi bi-envelope"></i>
+            </a>
+            &nbsp;
+            <a *ngIf="suggested" class="icon-action icon-add" (click)="add()">
+                <i class="bi bi-person-add"></i>
+            </a>
+            &nbsp;
+            <a *ngIf="friend?.friends_with && friend?.accepted" class="icon-action icon-remove" (click)="remove()">
+                <i class="bi bi-person-dash-fill"></i>
+            </a>
+            &nbsp;
+            <a *ngIf="friend?.friends_with?.id == user?.id && !friend.accepted" class="icon-action icon-add" (click)="accept()">
+                <i class="bi bi-check-all"></i>
+            </a>
+            <label class="pending" *ngIf="friend?.user?.id == user?.id && !friend?.accepted">
+                <small>Pending</small>
+                <a class="icon-action icon-remove" (click)="cancelRequest()">
+                    <i class="bi bi-x"></i>
+                </a>
+            </label>
+           
+            &nbsp;
+        </ul>
+    </div>
+</div>
